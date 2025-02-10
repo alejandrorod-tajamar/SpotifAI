@@ -1,0 +1,1190 @@
+{
+    "projectFileVersion": "2022-10-01-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0,
+            "normalizeCasing": false,
+            "augmentDiacritics": false
+        },
+        "projectName": "Music",
+        "multilingual": false,
+        "description": "Music recommendation and information",
+        "language": "es"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "None"
+            },
+            {
+                "category": "GetSongRecommendation"
+            },
+            {
+                "category": "GetArtistRecommendation"
+            },
+            {
+                "category": "GetSongInfo"
+            },
+            {
+                "category": "GetArtistInfo"
+            },
+            {
+                "category": "GetAlbumInfo"
+            },
+            {
+                "category": "GetPlaylistRecommendation"
+            }
+        ],
+        "entities": [
+            {
+                "category": "Genre",
+                "compositionSetting": "combineComponents",
+                "list": {
+                    "sublists": [
+                        {
+                            "listKey": "K-Pop",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "K-Pop",
+                                        "Pop Coreano"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Reggae",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Reggae"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Metal",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Metal",
+                                        "Heavy Metal"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Country",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Country",
+                                        "Música Country"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Música Clásica",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Música Clásica",
+                                        "Clásico"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Reggaetón",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Reggaetón",
+                                        "Latino",
+                                        "Urbano"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "R&B",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "R&B",
+                                        "Rhythm and Blues"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Hip-Hop",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Hip-Hop",
+                                        "Rap",
+                                        "Trap"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Electrónica",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Electrónica",
+                                        "EDM",
+                                        "Techno"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Indie",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Indie",
+                                        "Indie Rock"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Jazz",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Jazz",
+                                        "Blues"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Pop",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Pop",
+                                        "Música pop"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "listKey": "Rock",
+                            "synonyms": [
+                                {
+                                    "language": "es",
+                                    "values": [
+                                        "Rock",
+                                        "Rock and Roll",
+                                        "Rock N Roll"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "category": "Mood",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Activity",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Artist",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Song",
+                "compositionSetting": "combineComponents"
+            },
+            {
+                "category": "Album",
+                "compositionSetting": "combineComponents"
+            }
+        ],
+        "utterances": [
+            {
+                "text": "¿Me puedes recomendar una playlist con música para dormir?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 51,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué playlist me sugieres para hacer ejercicio?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 37,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Me puedes recomendar una lista de reproducción de jazz?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 51,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Me puedes recomendar una playlist para bailar?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 40,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué playlist me recomiendas para viajar?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 34,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuál es la mejor lista de reproducción para estudiar?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 45,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Tienes alguna playlist para relajarme?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 29,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Me puedes recomendar una lista de reproducción para entrenar?",
+                "language": "es",
+                "intent": "GetPlaylistRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 53,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artistas colaboraron en el álbum Graduation de Kanye West?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 38,
+                        "length": 10
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 52,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuántos tracks tiene el álbum Reputation de Taylor Swift?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 31,
+                        "length": 10
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 45,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué género es el álbum Future Nostalgia de Dua Lipa?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 24,
+                        "length": 16
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 44,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién produjo el álbum The Fame de Lady Gaga?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 24,
+                        "length": 8
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 36,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuál es el álbum más popular de Queen?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 33,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿De qué año es el álbum Back in Black?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 24,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué temas aborda el álbum Lover de Taylor Swift?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 27,
+                        "length": 5
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 36,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuántos discos tiene el álbum Thriller?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 31,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canciones tiene el álbum Dark Side of the Moon?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 30,
+                        "length": 21
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuándo se lanzó el álbum 1989 de Taylor Swift?",
+                "language": "es",
+                "intent": "GetAlbumInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 26,
+                        "length": 4
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 34,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quiénes forman parte de los Beatles?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 29,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿De qué género es la música de Ariana Grande?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 31,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién es el líder de los Rolling Stones?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 26,
+                        "length": 14
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿En qué ciudad nació Billie Eilish?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 21,
+                        "length": 13
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuál es el estilo musical de Coldplay?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 30,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿En qué año empezó su carrera Michael Jackson?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 30,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuántos premios Grammy tiene Adele?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 30,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuántos álbumes ha lanzado Beyoncé?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 28,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿De qué país es Taylor Swift?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 16,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuándo nació Ed Sheeran?",
+                "language": "es",
+                "intent": "GetArtistInfo",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 14,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué estilo musical tiene la canción Lose Yourself de Eminem?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 37,
+                        "length": 13
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 54,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuál es el tema principal de la canción Stay de Rihanna?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 41,
+                        "length": 4
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 49,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién es el artista que canta Uptown Funk?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 31,
+                        "length": 11
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuántas canciones tiene el álbum de Someone Like You?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Album",
+                        "offset": 37,
+                        "length": 16
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿En qué álbum está incluida Perfect de Ed Sheeran?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 28,
+                        "length": 7
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 39,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién escribió Imagine de John Lennon?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 16,
+                        "length": 7
+                    },
+                    {
+                        "category": "Artist",
+                        "offset": 27,
+                        "length": 11
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué año se estrenó Rolling in the Deep?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 20,
+                        "length": 19
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿De qué trata la canción Bad Guy?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 25,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién canta la canción Blinding Lights?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 24,
+                        "length": 15
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuándo se lanzó Shape of You?",
+                "language": "es",
+                "intent": "GetSongInfo",
+                "entities": [
+                    {
+                        "category": "Song",
+                        "offset": 17,
+                        "length": 12
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Si te gusta Beyoncé, ¿quién más debería escuchar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 12,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Tienes alguna recomendación de artista de música country?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 50,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién es un buen artista de música latina para escuchar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 36,
+                        "length": 6
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artista de rap me puedes recomendar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 16,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Si te gusta Adele, ¿qué otros artistas deberías escuchar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 12,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién me recomienda escuchar si me gusta el reggaetón?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 45,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Si me gusta Coldplay, ¿qué otro artista debería escuchar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 12,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artista de pop me sugieres escuchar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 16,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Recomiéndame un artista de música electrónica.",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 34,
+                        "length": 11
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Puedes sugerirme un artista de jazz?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 32,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artista me recomiendas si me gusta el rock?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 43,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Me puedes recomendar un artista de jazz?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 36,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Quién me recomiendas escuchar si me gusta la música electrónica?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 53,
+                        "length": 11
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Tienes alguna sugerencia de artistas similares a Coldplay?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Artist",
+                        "offset": 50,
+                        "length": 8
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artista debería escuchar hoy?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artistas me recomiendas si me gusta el pop?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 44,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Puedes sugerirme un artista nuevo?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué artista me recomendarías escuchar?",
+                "language": "es",
+                "intent": "GetArtistRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Recomiéndame una canción de rap.",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 28,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Recomiéndame una canción de música clásica.",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 35,
+                        "length": 7
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Tienes alguna canción de reggaetón para hoy?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 26,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción de rap me recomiendas escuchar?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 16,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Tienes alguna recomendación de canción de pop?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 43,
+                        "length": 3
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "Recomiéndame algo de música electrónica.",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 28,
+                        "length": 11
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción me sugieres si me gusta el jazz?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 40,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Me puedes recomendar una canción de rock?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 37,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción podría gustarme si me gusta el rock?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Genre",
+                        "offset": 44,
+                        "length": 4
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Cuáles son tus recomendaciones musicales para hoy?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción va bien para hacer ejercicio?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 32,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción me pones para relajarme?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Activity",
+                        "offset": 27,
+                        "length": 9
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Me puedes dar una recomendación de música energética?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Mood",
+                        "offset": 43,
+                        "length": 10
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción debo escuchar si estoy feliz?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [
+                    {
+                        "category": "Mood",
+                        "offset": 36,
+                        "length": 5
+                    }
+                ],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Tienes alguna sugerencia de canción?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "Recomiéndame algo para escuchar ahora.",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "¿Qué canción me recomiendas?",
+                "language": "es",
+                "intent": "GetSongRecommendation",
+                "entities": [],
+                "dataset": "Train"
+            }
+        ]
+    }
+}
