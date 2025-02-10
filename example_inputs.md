@@ -1,4 +1,6 @@
-### GetSongRecommendation:
+# Mensajes de ejemplo para probar cada intento reconocible por el CLU
+
+## 🎵🙌 GetSongRecommendation:
 ```txt
 Puedes sugerirme alguna canción de rock?
 ```
@@ -14,7 +16,7 @@ Dime qué canciones dev EDM puedo escuchar hoy
 ```
 > Obtiene canciones de EDM y detecta que es un sinónimo de electrónica, aunque detecta también EDM como una búsqueda de artista.
 
-### GetArtistRecommendation:
+## 🧑‍🎤🙌 GetArtistRecommendation:
 ```txt
 Sugiere un cantante de pop latino
 ```
@@ -31,7 +33,7 @@ Recomiéndame un grupo de metal que sea legendario
 Recomiéndame un grupo de heavy metal que sea legendario
 ```
 
-### GetPlaylistRecommendation
+## 💿🙌 GetPlaylistRecommendation
 ```txt
 ¿Me puedes recomendar una lista de reproducción de jazz?
 ```
@@ -45,7 +47,7 @@ Ponme una lista de rap
 Ponme una lista de hip-hop
 ```
 
-### GetSongInfo
+## 🎵ℹ️ GetSongInfo
 ```txt
 ¿Quién es el artista que canta Uptown Funk?
 ```
@@ -59,7 +61,7 @@ Dime quién canta la canción de Something Just Like This
 ¿En qué album se incluye la canción de Blinding Lights?
 ```
 
-### GetAlbumInfo
+## 💽ℹ️ GetAlbumInfo
 ```txt
 ¿De qué año es el álbum Back in Black?
 ```
@@ -70,7 +72,7 @@ Dime quién canta la canción de Something Just Like This
 Dime qué información tienes sobre el álbum 'Lágrimas Desordenadas' de Melendi
 ```
 
-### GetArtistInfo
+## 🧑‍🎤ℹ️ GetArtistInfo
 ```txt
 Dime la discografía de Metallica
 ```
