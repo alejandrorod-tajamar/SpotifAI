@@ -1,1 +1,1 @@
-"# SpotifAI" 
+# SpotifAI 🤖🎙️
