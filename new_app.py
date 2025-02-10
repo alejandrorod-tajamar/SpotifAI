@@ -7,7 +7,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 # Cargar variables de entorno
-load_dotenv()
+load_dotenv(override=True)
 
 # Datos de CLU en Azure Language Services
 CLU_ENDPOINT = os.getenv("CLU_ENDPOINT")
@@ -15,7 +15,7 @@ CLU_API_KEY = os.getenv("CLU_API_KEY")
 CLU_PROJECT_NAME = os.getenv("CLU_PROJECT_NAME")
 CLU_DEPLOYMENT_NAME = os.getenv("CLU_DEPLOYMENT_NAME")
 
-# Datos de Spotify
+# Datos de Spotify API
 SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
 SPOTIPY_CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
 
@@ -56,7 +56,9 @@ def consultar_clu(query):
     except requests.exceptions.RequestException as e:
         return {"error": f"Error en la conexión con CLU: {str(e)}"}
 
-# Aquí continúa el código de funciones que ya tienes, hasta la función manejar_recomendacion.
+
+# FUNCIONES DE CLU Y SPOTIFY
+
 def consultar_clu(query):
     """Envía una consulta a Conversational Language Understanding (CLU)"""
     url = f"{CLU_ENDPOINT}/language/:analyze-conversations?api-version=2022-10-01-preview"
@@ -91,6 +93,7 @@ def consultar_clu(query):
     except requests.exceptions.RequestException as e:
         return {"error": f"Error en la conexión con CLU: {str(e)}"}
 
+
 def buscar_info_cancion(cancion):
     """Busca información sobre una canción en Spotify"""
     try:
@@ -108,6 +111,7 @@ def buscar_info_cancion(cancion):
     except Exception as e:
         return {"error": f"Error en la búsqueda de la canción: {str(e)}"}
 
+
 def buscar_info_artista(artista):
     """Busca información sobre un artista en Spotify"""
     try:
@@ -123,6 +127,7 @@ def buscar_info_artista(artista):
         return {"error": "Artista no encontrado"}
     except Exception as e:
         return {"error": f"Error en la búsqueda del artista: {str(e)}"}
+
 
 def buscar_info_album(album):
     """Busca información sobre un álbum en Spotify"""
@@ -140,6 +145,7 @@ def buscar_info_album(album):
     except Exception as e:
         return {"error": f"Error en la búsqueda del álbum: {str(e)}"}
 
+
 def buscar_cancion_por_texto(texto):
     """Busca canciones en Spotify basadas en un texto"""
     try:
@@ -154,6 +160,7 @@ def buscar_cancion_por_texto(texto):
         ]
     except Exception as e:
         return {"error": f"Error en la búsqueda de canciones: {str(e)}"}
+
 
 def buscar_canciones_por_genero(genero):
     """Busca canciones en Spotify basadas en un género"""
@@ -170,6 +177,7 @@ def buscar_canciones_por_genero(genero):
     except Exception as e:
         return {"error": f"Error en la búsqueda de canciones por género: {str(e)}"}
 
+
 def buscar_canciones_por_artista(artista):
     """Busca canciones en Spotify basadas en un artista"""
     try:
@@ -185,6 +193,7 @@ def buscar_canciones_por_artista(artista):
     except Exception as e:
         return {"error": f"Error en la búsqueda de canciones por artista: {str(e)}"}
 
+
 def buscar_artistas_por_genero(genero):
     """Busca artistas en Spotify basados en un género"""
     try:
@@ -198,6 +207,7 @@ def buscar_artistas_por_genero(genero):
         ]
     except Exception as e:
         return {"error": f"Error en la búsqueda de artistas por género: {str(e)}"}
+
 
 def buscar_artistas_por_cancion(cancion):
     """Busca artistas en Spotify basados en una canción"""
@@ -216,8 +226,10 @@ def buscar_artistas_por_cancion(cancion):
     except Exception as e:
         return {"error": f"Error en la búsqueda de artistas por canción: {str(e)}"}
 
+
 def recomendar_artistas(artista):
     """Recomienda artistas relacionados en Spotify"""
+    # TODO: Revisar la lógica de la función, actualmente no encuentra artistas relacionados
     try:
         results = sp.search(q=f"artist:{artista}", type="artist", limit=1)
         if not results['artists']['items']:
@@ -239,6 +251,7 @@ def recomendar_artistas(artista):
     except Exception as e:
         return {"error": f"Error en la recomendación de artistas: {str(e)}"}
 
+
 def buscar_playlist_por_genero(genero):
     """Busca playlists en Spotify basadas en un género"""
     try:
@@ -253,9 +266,10 @@ def buscar_playlist_por_genero(genero):
     except Exception as e:
         return {"error": f"Error en la búsqueda de playlists por género: {str(e)}"}
 
+
 def manejar_recomendacion(intencion, entidades):
     """Maneja la recomendación basada en la intención y las entidades detectadas"""
-    # Inicializamos las variables para almacenar los valores de las entidades
+    # Inicializa las variables para almacenar los valores de las entidades
     entidad_map = {
         'Genre': None,
         'Mood': None,
@@ -265,7 +279,7 @@ def manejar_recomendacion(intencion, entidades):
         'Album': None
     }
 
-    # Extraemos las entidades de la respuesta
+    # Extrae las entidades de la respuesta
     for entidad in entidades:
         if isinstance(entidad, dict):
             categoria = entidad.get('category', '')
@@ -281,6 +295,7 @@ def manejar_recomendacion(intencion, entidades):
     album_detectado = entidad_map['Album']
 
     # Recomendaciones basadas en la intención
+
     if intencion == "GetSongRecommendation":
         recomendaciones = []
         if estado_animo_detectado:
@@ -309,7 +324,7 @@ def manejar_recomendacion(intencion, entidades):
             if isinstance(artistas_recomendados, list):
                 recomendaciones.extend(artistas_recomendados)
             else:
-                return artistas_recomendados  # Return the error message
+                return artistas_recomendados  # Devuelve un mensaje de error
 
         if recomendaciones:
             return f"Artistas recomendados:\n" + "\n".join(
@@ -325,7 +340,8 @@ def manejar_recomendacion(intencion, entidades):
                     [f"- {p['name']} [Escuchar en Spotify]({p['url']})" for p in playlists])
         return "No se encontraron playlists para las entidades proporcionadas."
 
-    # Nueva lógica para las intenciones de información
+    # Información detallada basada en la intención
+
     elif intencion == "GetSongInfo" and cancion_detectada:
         info_cancion = buscar_info_cancion(cancion_detectada)
         if "error" in info_cancion:
@@ -346,11 +362,13 @@ def manejar_recomendacion(intencion, entidades):
 
     return "Intención no reconocida o falta de datos suficientes para la recomendación."
 
-# Adaptamos la lógica para Streamlit
+
 def app():
+    '''Función principal de la aplicación de Streamlit'''
+    st.set_page_config(page_title="SpotifAI", page_icon="favicon.ico")
     st.title("Spotif:green[AI] Chatbot")
 
-    # Inicializamos el historial de chat
+    # Inicializa el historial de chat
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
@@ -385,6 +403,7 @@ def app():
             st.chat_message("Usuario").write(chat["message"])
         else:
             st.chat_message("SpotifAI").write(chat["message"])
+
 
 # Ejecución de la app de Streamlit
 if __name__ == "__main__":

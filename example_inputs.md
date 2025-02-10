@@ -8,6 +8,9 @@ Puedes sugerirme alguna canción de rock?
 Recomiéndame canciones de rap
 ```
 ```txt
+¿Qué canciones me recomendarías para empezar a escuchar a Rihanna?
+```
+```txt
 Recomiéndame una canción alegre para entrenar
 ```
 > Obtiene 5 canciones con la temática 'alegre' y otras 5 con la temática 'entrenar'.
