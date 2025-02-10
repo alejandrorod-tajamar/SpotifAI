@@ -2,7 +2,7 @@
 ```txt
 Recomiéndame una canción alegre para entrenar
 ```
->> Obtiene 5 canciones con la temática 'alegre' y otras 5 con la temática 'entrenar'.
+  > Obtiene 5 canciones con la temática 'alegre' y otras 5 con la temática 'entrenar'.
 ```txt
 Puedes sugerirme alguna canción de rock?
 ```
