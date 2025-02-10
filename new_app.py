@@ -364,7 +364,7 @@ def manejar_recomendacion(intencion, entidades):
 
 
 def app():
-    '''Función principal de la aplicación de Streamlit'''
+    """Función principal de la aplicación de Streamlit"""
     st.set_page_config(page_title="SpotifAI", page_icon="favicon.ico")
     st.title("Spotif:green[AI] Chatbot")
 
