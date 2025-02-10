@@ -1,18 +1,18 @@
 ### GetSongRecommendation:
 ```txt
-Recomiéndame una canción alegre para entrenar
-```
-  > Obtiene 5 canciones con la temática 'alegre' y otras 5 con la temática 'entrenar'.
-```txt
 Puedes sugerirme alguna canción de rock?
 ```
 ```txt
 Recomiéndame canciones de rap
 ```
 ```txt
+Recomiéndame una canción alegre para entrenar
+```
+> Obtiene 5 canciones con la temática 'alegre' y otras 5 con la temática 'entrenar'.
+```txt
 Dime qué canciones dev EDM puedo escuchar hoy
 ```
->> Obtiene canciones de EDM y detecta que es un sinónimo de electrónica, aunque detecta también EDM como una búsqueda de artista.
+> Obtiene canciones de EDM y detecta que es un sinónimo de electrónica, aunque detecta también EDM como una búsqueda de artista.
 
 ### GetArtistRecommendation:
 ```txt
