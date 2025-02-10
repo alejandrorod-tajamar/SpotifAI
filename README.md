@@ -16,3 +16,10 @@ Uso de la API de Spotify para acceder a datos musicales en tiempo real.
 - Escribir mensajes propios en el chat que sean similares a los de ejemplo para comprobar cuáles funcionan mejor.
 - Para ver la intención y las entidades detectadas en cada mensaje mandado, expandir el desplegable de la parte superior del chat.
 - Para ver más detalles sobre el CLU, revisar el archivo [modeldata_exported.json](/modeldata_exported.json).
+
+## Integración
+
+Para implementar un proyecto similar a este, basarse en la guía del siguiente enlace y fijarse en el código de la versión de la app sin Streamlit:
+
+- [Create a language understanding model with the Language service](https://microsoftlearning.github.io/mslearn-ai-language/Instructions/Exercises/03-language-understanding.html)
+- [app.py](/app.py)
