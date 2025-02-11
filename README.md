@@ -63,7 +63,7 @@ Configura tus credenciales de Azure y Spotify:
 
 Crea un archivo `.env`, con la siguiente estructura:
 
-```init
+```ini
 SPOTIPY_CLIENT_ID="tu_client_id"
 SPOTIPY_CLIENT_SECRET="tu_client_secret"
 SPOTIPY_REDIRECT_URI="puerto_donde_se_lanza_la_app"
