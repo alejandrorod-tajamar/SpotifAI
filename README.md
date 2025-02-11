@@ -23,3 +23,5 @@ Para implementar un proyecto similar a este, basarse en la guía del siguiente e
 
 - [Create a language understanding model with the Language service](https://microsoftlearning.github.io/mslearn-ai-language/Instructions/Exercises/03-language-understanding.html)
 - [app.py](/app.py)
+
+## [OPCIONAL] Instalación en local
