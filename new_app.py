@@ -1,6 +1,10 @@
+import requests
 import streamlit as st
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+
+# Cargar configuración de la página
+st.set_page_config(page_title="SpotifAI", page_icon="favicon.ico")
 
 # Cargar credenciales desde Streamlit Secrets
 client_id = st.secrets["SPOTIPY_CLIENT_ID"]
@@ -14,8 +18,6 @@ clu_deployment_name = st.secrets["CLU_DEPLOYMENT_NAME"]
 
 # Inicializar cliente de Spotify
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=client_id, client_secret=client_secret))
-
-st.success("Aplicación configurada correctamente en Streamlit Cloud")
 
 def consultar_clu(query):
     """Envía una consulta a Conversational Language Understanding (CLU)"""
@@ -312,7 +314,6 @@ def manejar_recomendacion(intencion, entidades):
 
 def app():
     """Función principal de la aplicación de Streamlit"""
-    st.set_page_config(page_title="SpotifAI", page_icon="favicon.ico")
     st.title(f":green[Spotif]AI :green[Chatbot]")
 
     # Inicializa el historial de chat
@@ -338,7 +339,7 @@ def app():
 
             # Mostrar la intención y las entidades para la depuración en un desplegable
             with st.expander("Detalles de la consulta"):
-                st.write(f"**:grren[Intención detectada:]** {intencion}")
+                st.write(f"**:green[Intención detectada:]** {intencion}")
                 st.write(f"**:green[Entidades detectadas:]** {entidades}")
 
             respuesta_recomendacion = manejar_recomendacion(intencion, entidades)
